@@ -1,4 +1,4 @@
-#+BEGIN_EXPORT
+#+BEGIN_HTML
 ---
 layout: post
 title: {{{My first post}}}
@@ -6,8 +6,8 @@ tagline: Blogging the way you should
 categories: life
 tags: web org-mode emacs org blog life general
 ---
-#+END_EXPORT
+#+END_HTML
 * Introduction
 This is an introduction to blogging with org-publish! I hope it works
 * Links to other stuff
-Links are added the usual way, as [[file:remember.org][remember me]]
+Links are added the usual way, as [[file:2020-01-04-remember-me.org][remember me]]
