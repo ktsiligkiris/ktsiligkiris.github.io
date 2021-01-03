@@ -6,10 +6,9 @@
          :base-extension "org"
          :publishing-directory "~/git/ktsiligkiris.github.io/_posts"
          :recursive t
-         :publishing-function org-html-publish-to-html
+         :publishing-function org-md-publish-to-md
          :headline-levels 4   ; Just the default for this project.
-         :html-extensions "html"
-         :body-only t
+         :markdown-extensions "markdown"
          )
         ("org-static"
          :base-directory "~/git/ktsiligkiris.github.io/org/"
