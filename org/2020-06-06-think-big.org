@@ -1,0 +1,66 @@
+#+OPTIONS: toc:nil
+#+BEGIN_EXPORT md
+---
+layout: post
+title: "THINK big"
+categories: career
+---
+#+END_EXPORT
+   It all started when I moved from being a technical writer to being
+   a documentation project manager. The transition was really
+   horrible, it brought my whole world up side down. It was something
+   like being in labor but for a really extended period of time. Now
+   the obvious question would be, if it was that horrible then why
+   did I do it?
+
+   There are two good reasons for that decision, which basically was not
+   entirely in my power to take that decision. Things had to move a
+   certain way for that to happen, and things did move that certain way,
+   and it really seemed like the opportunity of a lifetime. It really
+   did. So I took the chance.
+
+   Being self-conscious of one’s job status and thinking of the future,
+   one needs to ponder deeply and take some decisions sometimes,
+   decisions that are really important (note to self, I should really
+   stop using really). For one thing, I didn’t see a future in the
+   corporation I was working as a technical expert (and that was sad,
+   because that was all I wanted to be). For another thing, I really
+   didn’t know what a project manager would need to do, it seemed so
+   easy, or even redundant of a role.
+
+   So looking ahead and seeing no future for me as a technical expert in
+   the documentation department, and when my project manager moved on to
+   become a line manager, the position opened and I was offered it, I
+   thought “what could go wrong?” and seized the opportunity. Little did
+   I know!
+
+   Now this is my first post here, so I guess it should not be too long,
+   and I’ll cut it short here. The bottom line is that being a project
+   manager for the brief period of nearly 5 months was an eye-opening
+   experience. It taught me a lot. It taught me things I would never
+   learn if I stayed as a technical writer. But the most important was
+   that it made me realize that being a technical writer was **really**
+   what I wanted to be. And since there was no way back, and being always
+   a little lucky with finding a job, I did my research (not much of a
+   research, actually, I just searched technical writer in Glassdoor) and
+   soon I found a position offering in another corporation, I applied,
+   was twice interviewed, and was offered the position, which I accepted.
+
+   Now, on my way back to being a technical writer, I want one thing
+   only. To become an amazing technical writer. So I thought of starting
+   this blog, to document my achievements, findings, ordeals, thoughts
+   for the future, research findings, innovation ideas, just about
+   anything that a kick-ass technical writer would do (not that I’m not
+   one already).
+
+   I have some topics in mind, which I’m not going to disclose here. I’ll
+   work on them and publish periodically in this blog. And in the mean
+   time, I’ll use this blog also as a professional diary, jotting down my
+   thoughts about the noble profession of the technical writer. I don’t
+   aspire to reach the heights of blogs like
+   [[http://idratherbewriting.com][I'd rather be writing]],
+   although it would really be nice to become the next Tom Johnson (not
+   another one, but the next).
+
+   So I’ll leave you here with a promise to update this blog regularly
+   with my writing stuff.

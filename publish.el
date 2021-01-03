@@ -5,10 +5,8 @@
          :base-directory "~/git/ktsiligkiris.github.io/org/"
          :base-extension "org"
          :publishing-directory "~/git/ktsiligkiris.github.io/_posts"
-         :recursive t
          :publishing-function org-md-publish-to-md
          :headline-levels 4   ; Just the default for this project.
-         :markdown-extensions "markdown"
          )
         ("org-static"
          :base-directory "~/git/ktsiligkiris.github.io/org/"
