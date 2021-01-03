@@ -3,7 +3,7 @@
 #+BEGIN_EXPORT html
 ---
 layout: post
-title: {{{title}}}
+title: {{title}}
 tagline: Blogging the way you should
 categories: life
 tags: web org-mode emacs org blog life general

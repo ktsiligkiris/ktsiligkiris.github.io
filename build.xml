@@ -1,0 +1,20 @@
+<project name="org2jekyll" default="publish" basedir=".">
+  <description>
+    This is an experiment, to try to create the markdown necessary
+    files from org mode files, but not with the use of a makefile, but
+    with the use of an ant build file, because I like xml better.
+  </description>
+  <property name="template" location="publish.el"/>
+  <target name="publish" description="create all md files">
+    <echo message="Publishing... with current Emacs configuration."/>
+    <exec executable="emacs">
+      <arg line="--batch --load ${template} --funcall org-publish-all"/>
+    </exec>
+  </target>
+  <target name="publish_no_init" description="create all md but without init">
+    <echo message="Publishing... with --no-init."/>
+    <exec executable="emacs">
+      <arg line="--batch --no-init --load ${template} --funcall org-publish-all"/>
+    </exec>
+  </target>
+</project>
