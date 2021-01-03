@@ -1,9 +1,8 @@
-#+TITLE: Remember me
 #+OPTIONS: toc:nil
-#+BEGIN_EXPORT html
+#+BEGIN_EXPORT md
 ---
 layout: post
-title: {{title}}
+title: "Remember me"
 tagline: Blogging the way you should
 categories: life
 tags: web org-mode emacs org blog life general

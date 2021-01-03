@@ -1,6 +1,6 @@
 ---
 layout: post
-title: {{title}}
+title: "My first post"
 tagline: Blogging the way you should
 categories: life
 tags: web org-mode emacs org blog life general
