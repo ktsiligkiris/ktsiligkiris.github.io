@@ -1,4 +1,5 @@
-#+BEGIN_HTML
+#+OPTIONS: toc:nil
+#+BEGIN_EXPORT html
 ---
 layout: post
 title: {{{My first post}}}
@@ -6,7 +7,7 @@ tagline: Blogging the way you should
 categories: life
 tags: web org-mode emacs org blog life general
 ---
-#+END_HTML
+#+END_EXPORT
 * Introduction
 This is an introduction to blogging with org-publish! I hope it works
 * Links to other stuff
