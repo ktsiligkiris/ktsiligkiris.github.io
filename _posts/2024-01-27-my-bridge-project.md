@@ -8,7 +8,7 @@ categories: bridge
 # The idea
 
 It's been a while since I wrote anything here, oh well, life
-happens. Anyway, my new pation project is to create, using rust, some
+happens. Anyway, my new passion project is to create, using rust, some
 small command line tools that would help me in converting bridge
 distributions file formats, creating a lin file to use in a bridge
 program created in java, and, who know, possibly replace this java
@@ -29,4 +29,132 @@ rust programmer. I will try to keep notes of all the progress, the
 architectural decisions, and the crates on which I will base my
 work. My hope is that gradually, I will move from simple command line
 tools to a fool fledged program that could substitute the java one.
+
+
+# the pbn
+
+PBN stands for portable bridge notation, and it's one of the three
+available formats that I can download the hands from the federation
+site. The format is not too complicated, and in ascii format, so it's
+human readable, and seems quite simple. That was a nice surprise after
+the effort I put in deciphering the lin format. Anyway, the pbn file
+has the following format:
+
+    % PBN 2.1
+    [Board "1"]
+    [Dealer "N"]
+    [Vulnerable "None"]
+    [Deal "N:J87.KQ8632.Q.JT8 Q2.J95.J42.A7632 A543.A4.K763.KQ9 KT96.T7.AT985.54"]
+    
+    [Board "2"]
+    [Dealer "E"]
+    [Vulnerable "NS"]
+    [Deal "N:32.A6.KQJ62.AQT5 96.QJT8.AT754.KJ KJT74.532.8.9876 AQ85.K974.93.432"]
+    
+    ....
+
+Every file (at least the ones that I download) begin with the string
+\`% PBN 2.1\` which evidently is the id of the file (pbn) and the
+version, in this case 2.1.
+
+Following that information is given in fields included in side square
+brackets, like the board number, the dealer of the hand (N, E, S, or
+W), the vulnerability (None, NS, EW, All) and the actual Deal, which
+is a string consisting of the hand that is first given (in my examples
+this is always North, but I assume this could be different), a colon
+and then all the hands, beginning with the first hand declared before
+the colon (North) and going clockwise round the table (East, South,
+West). The hands are separated with spaces, and the various suites in
+each hand are separated with dots. If there is no cards for a suite,
+then two adjacent dots are used.
+
+
+# the lin
+
+The format of the lin file to which initially I did the conversion is
+the following:
+
+    qx|o1|md|3SA543HA4DK763CKQ9,SKT96HT7DAT985C54,SJ87HKQ8632DQCJT8|rh||ah|Board 1|sv|0|pg||
+    qx|o2|md|4SKJT74H532D8C9876,SAQ85HK974D93C432,S32HA6DKQJ62CAQT5|rh||ah|Board 2|sv|N|pg||
+    ...
+
+This is exactly the same example as the previous pbn file. From first
+look it's obvious that this file format is quite terse and somehow
+cryptic. Anyway, this file format works as follows:
+
+Commands are two letters always, and they are always followed by to
+pipe characters || that include data concerning the command. The
+explanation that I found in another site is that the pipe character
+changes the reading mode of the lin parser, much like the modes that
+change in vim. So the parser starts in command mode, gulps all letters
+until it finds the first pipe character, discards everything but the
+last two letters that specify the command, then enters data mode, and
+reads the arguments of the command until the next pipe character. Then
+it switches back to command mode, and the cycle repeats.
+
+My output includes only two letter characters, but I guess that the
+file could work even with this format:
+
+    indexqx|o1|makedistributionmd|.......|removeheaderrh||addheaderah|Board
+    1|setvulnerabilitysv|0|pagepg||
+
+Giving in this way more information for the commands (while still
+including the commands with the last two characters). So as you can
+see the explanation of the commands used are the following:
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">command</th>
+<th scope="col" class="org-left">explanation</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td class="org-left">qx</td>
+<td class="org-left">index</td>
+</tr>
+
+
+<tr>
+<td class="org-left">md</td>
+<td class="org-left">make distribution</td>
+</tr>
+
+
+<tr>
+<td class="org-left">rh</td>
+<td class="org-left">remove header</td>
+</tr>
+
+
+<tr>
+<td class="org-left">ah</td>
+<td class="org-left">add header</td>
+</tr>
+
+
+<tr>
+<td class="org-left">sv</td>
+<td class="org-left">set vulnerability</td>
+</tr>
+
+
+<tr>
+<td class="org-left">pg</td>
+<td class="org-left">page</td>
+</tr>
+</tbody>
+</table>
+
+The interpretation is mine, since I can't seem to find any
+documentation anywhere that clearly documents the cryptic format.
 

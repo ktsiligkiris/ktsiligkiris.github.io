@@ -1,0 +1,58 @@
+#+OPTIONS: toc:nil
+#+BEGIN_EXPORT md
+---
+layout: post
+title: "The bridge converter"
+categories: bridge rust
+---
+#+END_EXPORT
+* Intro
+It's possible that this article will be written in the course of a lot
+of days, and I am intending to publish the final one when the
+converter is ready and working. Until then, let's see where we go from
+here.
+* packages
+These are the packages that I am including in the project
++ *clap*, of course, how would I be able to create a proper command line
+  application without clap?
++ *nom*, for creating the file parser, to load information and then
+  repurpose them the way that I need, in order to create the lin file.
++ *log* for logging debug information, at least now that I am creating
+  the application. Maybe later I will remove this debugging
+  information, or maybe not, I haven't decided yet.
++ *simple_logger*, which is needed by log, as log is only a facade,
+  and this is the actual logger that does the heavy lifting.
+
+Here is the actual code included in my toml file.
+#+BEGIN_SRC toml
+  [package]
+  name = "converter"
+  version = "0.1.0"
+  edition = "2021"
+
+  # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+  [dependencies]
+  clap = { version = "4.4.18", features = ["derive"] }
+  log = "0.4.20"
+  nom = "7"
+  simple_logger = "4.3.3"
+#+END_SRC
+* Side note about lin files
+This is a file format that was created by bridgebaseonline, a big
+bridge playing online platform, with the purpose of storing all the
+necessary information needed for storing hand distributions, bidding,
+and the execution of the hand. Unfortunately, this is not an open
+format, in the sense that there is no documentation to be found
+anywhere, and the meaning of the various keywords was researched by
+me, but I'm not sure about the proper meaning of each keyword.
+
+There is also the aaBridge program, written in Java, the source of
+which is readily available, but it's not easy for me to go spelunking
+in the java code. Having said that, I have found after a lot of
+searching some information that describes the various functions of the
+commands, but there are a lot of commands, even in there, that are not
+documented. This leads me to understand that even the author of
+aaBridge didn't have in hand any proper documentation and he divined
+the meaning of these command with experimentation, something I did
+also myself, to some extend.
